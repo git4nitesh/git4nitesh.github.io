@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Attandance System</h1>
+    <hr/>
+    <br/>
+    <br/>
+        <h2 id="status"></h2>
+    <br/>
+    <br/>
+    <hr/>
+    <button id="In">In</button>
+    <button id="Out">Out</button>
+    <button id="Reset">Reset</button>
+    <script>
+        function UpdateStatus(message){
+            $('#status').html(message);
+        }
+        $(document).ready(function () {
+            $('#In').on('click',function(){
+                $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=In',ontimeupdate);
+            });
+            $('#Out').on('click',function(){
+                $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=Out',ontimeupdate);
+            });
+            $('#Reset').on('click',function(){
+                $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=Reset',ontimeupdate);
+            });            
+        });
+    </script>
+</body>
+
+</html>
