@@ -27,12 +27,15 @@
         }
         $(document).ready(function () {
             $('#In').click(function () {
+                $.support.cors = true;
                 $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=In', ontimeupdate);
             });
             $('#Out').on('click', function () {
+                $.support.cors = true;
                 $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=Out', ontimeupdate);
             });
             $('#Reset').on('click', function () {
+                $.support.cors = true;
                 $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=Reset', ontimeupdate);
             });
         });
