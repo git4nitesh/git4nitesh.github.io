@@ -5,7 +5,8 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -13,7 +14,7 @@
     <hr/>
     <br/>
     <br/>
-        <h2 id="status"></h2>
+    <h2 id="status"></h2>
     <br/>
     <br/>
     <hr/>
@@ -21,19 +22,19 @@
     <button id="Out">Out</button>
     <button id="Reset">Reset</button>
     <script>
-        function UpdateStatus(message){
+        function UpdateStatus(message) {
             $('#status').html(message);
         }
         $(document).ready(function () {
-            $('#In').on('click',function(){
-                $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=In',ontimeupdate);
+            $('#In').click(function () {
+                $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=In', ontimeupdate);
             });
-            $('#Out').on('click',function(){
-                $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=Out',ontimeupdate);
+            $('#Out').on('click', function () {
+                $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=Out', ontimeupdate);
             });
-            $('#Reset').on('click',function(){
-                $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=Reset',ontimeupdate);
-            });            
+            $('#Reset').on('click', function () {
+                $.get('http://192.168.1.135:6161/Comunication/ApplicationService?action=Reset', ontimeupdate);
+            });
         });
     </script>
 </body>
